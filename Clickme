@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary My Adi 🌸</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Sawarabi+Mincho&display=swap');
+
+        body {
+            text-align: center;
+            background: url('https://wallpapercave.com/wp/wp6032741.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Sawarabi Mincho', serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 60px;
+            margin-top: 20px;
+            color: #ffd1dc;
+            text-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .btn-special {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-special:hover {
+            background: #ff5e78;
+            box-shadow: 0px 5px 25px rgba(255, 0, 0, 0.6);
+        }
+
+        /* Hidden surprise message */
+        .surprise {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: #ff7eb3;
+            text-shadow: 0 0 10px #ff7eb3, 0 0 20px #ff5e78;
+            display: none;
+            animation: fadeIn 2s ease-in-out, glow 1.5s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff7eb3, 0 0 20px #ff5e78; }
+            to { text-shadow: 0 0 20px #ff7eb3, 0 0 40px #ff5e78; }
+        }
+
+        /* Fireworks animation */
+        .firework {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            animation: explode 1s linear forwards;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(20); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌸 Happy 2nd Anniversary My Adi 🌸</h1>
+
+    <button class="btn-special" onclick="showSurprise()">Click for a Surprise! 🎁</button>
+
+    <!-- Hidden Message -->
+    <div class="surprise" id="surprise-message">I Love You, My Adi! 💖</div>
+
+    <script>
+        function showSurprise() {
+            // Show the message
+            document.getElementById("surprise-message").style.display = "block";
+
+            // Fireworks effect
+            for (let i = 0; i < 15; i++) {
+                createFirework();
+            }
+        }
+
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+
+            firework.style.left = Math.random() * window.innerWidth + "px";
+            firework.style.top = Math.random() * window.innerHeight + "px";
+
+            document.body.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
